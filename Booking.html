@@ -33,6 +33,10 @@
         <a href="index.html"
           ><img src="image/Logo1.png" class="mainlogo" alt="#"
         /></a>
+        <input type="checkbox" id="check" />
+            <label for="check" class="click-menu">
+              <img src="image/menu.png" alt="" />
+          </label>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="Gallery.html">Gallery</a></li>
@@ -76,23 +80,23 @@
 
     <h1>Select your fuel type</h1>
     <form class="feul">
-        <div class="carburant" >
-            <input type="radio" id="essence" name="radio" value="essence">
-            <label for="essence">Essence</label>
-        </div>
-        <div class="carburant" >
-            <input type="radio" id="diesel" name="radio" value="diesel">
-            <label for="diesel">Diesel</label>
-        </div>
-        <div class="carburant" >
-            <input type="radio" id="electrique" name="radio" value="electrique">
-            <label for="electrique">Electrique</label>
-        </div>
-        <div class="carburant" >
-            <input type="radio" id="hybride" name="radio" value="hybride">
-            <label for="hybride">Hybride</label>
-        </div>
-    </form>
+      <div class="carburant">
+          <input type="radio" id="essence" name="radio" value="0.14" onclick="fuelP(this.value)">
+          <label for="essence">Essence</label>
+      </div>
+      <div class="carburant">
+          <input type="radio" id="diesel" name="radio" value="0.21" onclick="fuelP(this.value)">
+          <label for="diesel">Diesel</label>
+      </div>
+      <div class="carburant">
+          <input type="radio" id="electrique" name="radio" value="0.05" onclick="fuelP(this.value)">
+          <label for="electrique">Electrique</label>
+      </div>
+      <div class="carburant">
+          <input type="radio" id="hybride" name="radio" value="0.09" onclick="fuelP(this.value)">
+          <label for="hybride">Hybride</label>
+      </div>
+  </form>
 
     <!-----------------------gear box----------------------->
 
@@ -112,8 +116,11 @@
     <h1>Reservation duration</h1>
     <form class="duration">
         <label for="date">Duration :</label>
-        <input type="number" min="1" id="date" name="date" onchange="">
+        <input type="number" min="1" id="date" name="date">
       </form>
+      <div class="submit-1">
+        <input type="submit" name="" value="Submit" onclick="calc()" class="submit">
+    </div>
     </div>
   <!-- footer -->
   <footer>

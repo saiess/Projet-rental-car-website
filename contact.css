@@ -226,7 +226,7 @@ h3 {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
   body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -249,5 +249,154 @@ h3 {
     width: 12vw;
     height: 10vh;
     margin: 20px 20px;
+  }
+  .twitteryoutube,
+  .facebookinsta {
+    width: 28px;
+  }
+  .copyright {
+    font-size: 8px;
+  }
+  .footer {
+    width: 90%;
+    left: 12%;
+    top: 20em;
+    position: relative;
+  }
+  .up {
+    left: 4rem;
+    top: 31%;
+    text-align: center;
+  }
+  p {
+    font-size: 10px;
+  }
+  .contactbutton {
+    width: 19vw;
+    height: 5vh;
+    font-size: 10px;
+    left: 14em;
+  }
+  .inputs {
+    width: 100vw;
+    left: 5%;
+  }
+  .input-parts {
+    width: 49vw;
+    height: 6vh;
+  }
+  .input-phone {
+    width: 100vw;
+    height: 6vh;
+  }
+  .input-message {
+    width: 100vw;
+    height: 15vh;
+  }
+}
+
+#check {
+  display: none;
+}
+.click-menu img {
+  height: 3em;
+  display: none;
+}
+.click-menu img:hover {
+  transform: rotateZ(-30deg)
+}
+@media screen and (max-width: 600px) {
+  #check:checked ~ ul {
+    left: 2.5% !important;
+    width: 95vw !important;
+    height: 102vh !important;
+    padding-top: 60%;
+  }
+  .menu {
+    padding: 40px;
+  }
+  ul {
+    position: absolute;
+    z-index: 9999;
+    flex-direction: column;
+    top: 100px;
+    left: -100%;
+    text-align: center;
+    background: #000;
+    border-radius: 50px;
+  }
+  ul li {
+    padding: 0;
+  }
+  .signin-button, .signup-button{
+    width: 18vw;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+    width: 90vw;
+    height: 74vh;
+    padding: 20px 0px;
+  }
+  .click-menu img {
+    display: block;
+    width: 11vw;
+    height: 7vh;
+    box-shadow: 0px 0px 1px rgb(250 250 252), 0px 0px 1px rgb(0 0 0),
+      0px 0px 4px rgb(250 252 250);
+    border-radius: 50%;
+  }
+  .mainlogo {
+    height: 10vh;
+    margin: 0px;
+  }
+  .footer {
+    width: 90%;
+    right: 5%;
+  }
+  .cantact-tittle {
+    text-align: center;
+    padding: 10px 0px;
+    opacity: 0.2;
+    font-size: 10px;
+  }
+  .getintouch {
+    padding: 17% 0%;
+  }
+  p {
+    font-size: 10px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  .up {
+    left: 0rem;
+    top: 48%;
+  }
+  .contactbutton {
+    width: 24vw;
+    height: 5vh;
+    font-size: 10px;
+    left: 11em;
+  }
+  .inputs {
+    width: 90vw;
+    left: 10%;
+  }
+  .input-parts {
+    width: 39vw;
+    height: 6vh;
+  }
+  .input-phone {
+    width: 80vw;
+    height: 6vh;
+  }
+  .input-message {
+    width: 80vw;
+    height: 15vh;
   }
 }

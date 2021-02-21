@@ -44,6 +44,16 @@ body {
   height: 70%;
   margin: 20px 20px;
 }
+#check {
+  display: none;
+}
+.click-menu img {
+  height: 3em;
+  display: none;
+}
+.click-menu img:hover {
+  transform: rotateZ(-30deg)
+}
 
 .signin-button {
   background-color: rgb(0, 0, 0);
@@ -153,14 +163,15 @@ footer {
   bottom: 5em;
 }
 .footer {
-  width: 100%;
+  width: 100vw;
   height: 10%;
   overflow: hidden;
   background-color: transparent;
   display: flex;
   flex-basis: 100%;
   justify-content: space-evenly;
-  position: fixed;
+  position: relative;
+  bottom: -50rem;
 }
 
 .twitteryoutube {
@@ -191,4 +202,73 @@ footer {
 
 h3 {
   font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+  #check:checked ~ ul {
+    left: 2.5% !important;
+    width: 95vw !important;
+    height: 102vh !important;
+    padding-top: 60%;
+  }
+  .menu {
+    padding: 40px;
+  }
+  ul {
+    position: absolute;
+    z-index: 9999;
+    flex-direction: column;
+    top: 100px;
+    left: -100%;
+    text-align: center;
+    background: #000;
+    border-radius: 50px;
+  }
+  ul li {
+    padding: 0;
+  }
+  .signin-button, .signup-button{
+    width: 18vw;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+    width: 90vw;
+    height: 74vh;
+    padding: 20px 0px;
+  }
+  .click-menu img {
+    display: block;
+    width: 11vw;
+    height: 7vh;
+    box-shadow: 0px 0px 1px rgb(250 250 252), 0px 0px 1px rgb(0 0 0),
+      0px 0px 4px rgb(250 252 250);
+    border-radius: 50%;
+  }
+  .mainlogo {
+    height: 10%;
+    margin: 0px;
+    position: absolute;
+  }
+  .vehicles{
+    width: 100vw;
+  }
+  .cars, .motorcycle, .trucks, .construction-machine{
+    padding-left: 18px;
+  }
+  .footer {
+    width: 100vw;
+    right: -5%;
+    bottom: -94rem;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  .some img {
+    height: 150px;
+  }
+
 }

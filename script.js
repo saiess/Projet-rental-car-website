@@ -18,84 +18,120 @@ function validation_contact() {
     alert("enter your nom");
     return false;
   }
-  if(email==""){
-      alert("enter your Email");
-      return false;
-  }
-  if(phone==""){
+  if (email == "") {
     alert("enter your Email");
     return false;
-}
-  if(Sujet==""){
-      alert("enter your Sujet");
-      return false;
   }
-  if(message=="" || message.length<10){
-      alert("enter your message");
-      return false;
+  if (phone == "") {
+    alert("enter your Email");
+    return false;
+  }
+  if (Sujet == "") {
+    alert("enter your Sujet");
+    return false;
+  }
+  if (message == "" || message.length < 10) {
+    alert("enter your message");
+    return false;
   }
 
-  alert(username+" "+email+" "+phone+" "+sujet+" "+message);
+  alert(username + " " + email + " " + phone + " " + sujet + " " + message);
 }
 
 // ------------------javascript for bookin---------------------
-var type;
+var type,
+  basePrice,
+  fuel,
+  tranPrice = 0,
+  total;
 
 function choix(e) {
-    type = e;
-    var a=document.getElementsByName('radio');
-    for(var i=0;i<a.length;i++){
-        a[i].disabled = true;
-    }
+  type = e;
+  var a = document.getElementsByName("radio");
+  for (var i = 0; i < a.length; i++) {
+    a[i].disabled = true;
+  }
 
+  var b = document.getElementsByName("gear");
+  for (var i = 0; i < b.length; i++) {
+    b[i].disabled = true;
+  }
 
-    var b=document.getElementsByName('gear');
-    for(var i=0;i<b.length;i++){
-        b[i].disabled = true;
-    }
+  switch (type) {
+    case "moto":
+      document.querySelector("#essence").disabled = false;
+      document.querySelector("#electrique").disabled = false;
+      basePrice = 10;
+      break;
 
+    case "compact":
+      document.querySelector("#manual").disabled = false;
+      document.querySelector("#manual").checked = true;
+      document.querySelector("#hybride").disabled = false;
+      document.querySelector("#essence").disabled = false;
+      document.querySelector("#diesel").disabled = false;
+      basePrice = 14;
+      break;
 
-    switch (type) {
-        case "moto": document.querySelector("#essence").disabled = false;
-                     document.querySelector("#electrique").disabled = false;
-        break;
-        
+    case "citadine":
+      document.querySelector("#manual").disabled = false;
+      document.querySelector("#manual").checked = true;
+      document.querySelector("#electrique").disabled = false;
+      document.querySelector("#hybride").disabled = false;
+      document.querySelector("#essence").disabled = false;
+      document.querySelector("#diesel").disabled = false;
+      basePrice = 12;
+      break;
 
-        case "compact": document.querySelector("#manual").disabled = false;
-                        document.querySelector("#hybride").disabled = false;
-                        document.querySelector("#essence").disabled = false;
-                        document.querySelector("#diesel").disabled = false;
-        break;
+    case "utilitaire":
+      document.querySelector("#manual").disabled = false;
+      document.querySelector("#manual").checked = true;
+      document.querySelector("#diesel").disabled = false;
+      document.querySelector("#diesel").checked = true;
+      basePrice = 16;
+      break;
 
+    case "berlin":
+      document.querySelector("#automatic").disabled = false;
+      document.querySelector("#automatic").checked = true;
+      document.querySelector("#hybride").disabled = false;
+      document.querySelector("#essence").disabled = false;
+      document.querySelector("#diesel").disabled = false;
+      basePrice = 20;
+      tranPrice = 0.19;
+      break;
 
-        case "citadine": document.querySelector("#manual").disabled = false;
-                         document.querySelector("#electrique").disabled = false;
-                         document.querySelector("#hybride").disabled = false;
-                         document.querySelector("#essence").disabled = false;
-                         document.querySelector("#diesel").disabled = false;
-        break;
+    case "truck":
+      document.querySelector("#automatic").disabled = false;
+      document.querySelector("#automatic").checked = true;
+      document.querySelector("#diesel").disabled = false;
+      document.querySelector("#diesel").checked = true;
+      basePrice = 250;
+      tranPrice = 0.19;
+      break;
 
+    case "cm":
+      document.querySelector("#manual").disabled = false;
+      document.querySelector("#manual").checked = true;
+      document.querySelector("#diesel").disabled = false;
+      document.querySelector("#essence").disabled = false;
+      basePrice = 900;
+      break;
+  }
+}
 
-        case "utilitaire": document.querySelector("#manual").disabled = false;
-                           document.querySelector("#diesel").disabled = false;
-        break;
+/* fuel */
+function fuelP(e) {
+  fuel = e;
+}
 
-        case "berlin": document.querySelector("#automatic").disabled = false;
-                       document.querySelector("#hybride").disabled = false;
-                       document.querySelector("#essence").disabled = false;
-                       document.querySelector("#diesel").disabled = false;
-        break;
+/* calcul */
+function calc() {
+  var days = document.querySelector("#date").value;
+  total = (basePrice + basePrice * fuel + basePrice * tranPrice) * days;
+  console.log("basePrice :", basePrice);
+  console.log("fuel :", fuel);
+  console.log("tranPrice :", tranPrice);
 
-        case "truck": document.querySelector("#automatic").disabled = false;
-                      document.querySelector("#diesel").disabled = false;
-        break;
-
-        case "cm": document.querySelector("#manual").disabled = false;
-                   document.querySelector("#diesel").disabled = false;
-                   document.querySelector("#essence").disabled = false;
-        break;
-        
-    }
-
-
+  alert(total);
 }
